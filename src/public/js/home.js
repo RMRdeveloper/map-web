@@ -31,8 +31,8 @@ d.addEventListener('DOMContentLoaded', (e) => {
 			createMarker(coords);
 			socket.emit('userCoordinates', coords);
 		},
-		(err) => {
-			alert(`Hubo un error: `, err);
+		(error) => {
+			alert(`Hubo un error: `, error);
 		},
 		geoOptions
 	);
