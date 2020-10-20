@@ -25,4 +25,4 @@ app.use((err, req, res, next) => {
     if(err) return console.log('Hubo un error en el servidor', err);
 })
 
-server.listen(3000, () => console.log('server on port 3000'))
+server.listen(process.env.PORT || 3000, () => console.log('server on port 3000'))
