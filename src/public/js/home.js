@@ -1,7 +1,11 @@
 const d = document;
+const w = window;
 
 d.addEventListener('DOMContentLoaded', (e) => {
 	const socket = io();
+	w.addEventListener('unload', (e) => {
+		socket.emit('disconnect');
+	});
 	const map = L.map('map', {
 		center: [36.2422994, -113.7487596],
 		zoom: 4,
