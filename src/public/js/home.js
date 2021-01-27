@@ -56,21 +56,30 @@ d.addEventListener('DOMContentLoaded', (e) => {
 		createRadius(coords);
 	};
 
-	navigator.geolocation.getCurrentPosition(
-		(pos) => {
-			const coords = [pos.coords.latitude, pos.coords.longitude];
-			createMarker(coords);
-			socket.emit('userCoordinates', coords);
-		},
-		(err) => {
-			console.log(`Hubo un error: ${err.message}`);
-		},
-		geoOptions
-	);
+	setTimeout(() => {
+		navigator.geolocation.getCurrentPosition(
+			(pos) => {
+				const coords = [pos.coords.latitude, pos.coords.longitude];
+				createMarker(coords);
+				socket.emit('userCoordinates', coords);
+			},
+			(err) => {
+				console.log(`Hubo un error: ${err.message}`);
+			},
+			geoOptions
+		);
+	}, 5000);
 
 	socket.on('newUserCoordinates', (coords) => {
 		createMarker(coords);
 	});
+
+	d.addEventListener('click', (e) => {
+		if(e.target.matches('.btn-close')){
+			d.querySelector('.warning').remove();
+			d.querySelector('.background').remove();
+		}
+	})
 
 	// const marker = L.marker([18.2375496, -70.2050959]);
 	// marker.bindPopup('Estás actualmente en ésta posición.').addTo(map);

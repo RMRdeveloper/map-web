@@ -1,9 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 #map{
     width: 100vw;
     height: 100vh;
+}
+
+.background{
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: 999;
+	top: 0px;
+	left: 0px;
+	background: rgba(0, 0, 0, 0.3);
+}
+
+.warning{
+	position: absolute;
+	z-index: 9999;
+	top: 100px;
+	padding: 40px;
+	left: calc(46vw - 250px);
+	margin: 0 auto;
+	width: 500px;
+	background: #fff;
+	box-shadow: 0px 0px 3px rgb(212, 212, 212);
+}
+
+.title-warning{
+	text-align: center;
+	color: #c0392b;
+	margin: 0px 0px 20px 0px;
+}
+
+.text-warning{
+	font-size: 20px;
+	text-align: justify;
+	white-space: pre-wrap;
+}
+
+.link-warning{
+	text-decoration: none;
+}
+
+.btn-close{
+	background: #c0392b;
+	color: #fff;
+	/*font-weight: bold;*/
+	float: right;
+	cursor: pointer;
+	font-size: 18px;
+	padding: 10px 20px;
+	margin: 20px 0px 0px 0px;
+	border-style: none;
+	border-radius: 5px;
 }

@@ -8,6 +8,14 @@ html(lang="es")
         title HOME
     body
         div#map
+        div.background
+        div(class="warning")
+            h2(class="title-warning") ATENCIÓN
+            p(class="text-warning")
+                | Si activa el permiso de ubicación, estará compartiendo sus coordenadas con una presición casi exacta "con un margen de error mínimo". Si no desea compartir dicha información con los demás usuarios, decline este permiso.
+                | 
+                | En el caso de que haya aceptado el permiso sin saber nada del mismo, de ante mano te pedimos salir del sitio web, puede que esté siendo victima del <a class="link-warning" href="https://es.wikipedia.org/wiki/Doxing">DOXING</a>.
+            button(class="btn-close") !Lo entiendo¡
 
         script(src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js", integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==", crossorigin="")
         script(src="/socket.io/socket.io.js")
